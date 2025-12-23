@@ -1,5 +1,6 @@
 import MainHeading from "./../components/MainHeading.jsx";
 import InputComp from "./../components/InputComp.jsx";
+import Button from "./../components/Button.jsx";
 
 function SignUp() {
   return (
@@ -39,6 +40,12 @@ function SignUp() {
         inputLegend={"Company name"}
         isMandatory={false}
         onchange={onchange}
+      />
+      <Button
+        type={"button"}
+        btnTitle={"Create Account"}
+        btnVariant={"primary"}
+        size="md"
       />
     </div>
   );
