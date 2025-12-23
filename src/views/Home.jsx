@@ -1,7 +1,16 @@
-import React from "react";
+import MainHeading from "./../components/MainHeading.jsx";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <MainHeading
+        headingTitle={"Welcome to PopX"}
+        headingDescription={
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        }
+      />
+    </div>
+  );
 }
 
 export default Home;

@@ -1,7 +1,11 @@
-import React from "react";
+import MainHeading from "./../components/MainHeading.jsx";
 
 function SignUp() {
-  return <div>SignUp</div>;
+  return (
+    <div>
+      <MainHeading headingTitle={"Create your PopX account"} />
+    </div>
+  );
 }
 
 export default SignUp;
