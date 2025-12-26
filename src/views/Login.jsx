@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import MainHeading from "./../components/MainHeading.jsx";
 import InputComp from "./../components/InputComp.jsx";
 import Button from "./../components/Button.jsx";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 function Login() {
+  const navigate = useNavigate();
   const [isDisabled, setIsDisabled] = useState(true);
   const [loginData, setloginData] = useState({
     email: "",
@@ -17,7 +20,19 @@ function Login() {
   };
 
   const handleLogin = () => {
-    // localStorage.setItem("loginData", JSON.stringify(loginData));
+    const signUpData = JSON.parse(localStorage.getItem("signUpData"));
+    if (
+      loginData.email !== signUpData.email ||
+      loginData.password !== signUpData.password
+    ) {
+      toast.error("Please enter valid credentials");
+    }
+
+    toast.success("Login Successfull");
+
+    setTimeout(() => {
+      navigate("/profile");
+    }, 2000);
   };
 
   useEffect(() => {
