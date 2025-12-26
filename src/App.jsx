@@ -2,6 +2,7 @@ import Home from "./views/Home.jsx";
 import Login from "./views/Login.jsx";
 import SignUp from "./views/SignUp.jsx";
 import Profile from "./views/Profile.jsx";
+import { Toaster } from "react-hot-toast";
 
 import { BrowserRouter, Routes, Route } from "react-router";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <Toaster />
     </BrowserRouter>
   );
 }

@@ -9,6 +9,8 @@ function InputComp({
   inputLegend,
   isMandatory,
   onchange,
+  min,
+  max,
 }) {
   return (
     <fieldset className="border-2 border-gray-300 rounded-md px-2 pb-2 focus-within:border-violet-600">
@@ -22,6 +24,8 @@ function InputComp({
         name={name}
         type={type}
         value={value}
+        min={min}
+        max={max}
         placeholder={placeholder}
         className="w-full px-3 border-none outline-none text-gray-900 placeholder-gray-400 bg-transparent text-sm"
         onChange={onchange}

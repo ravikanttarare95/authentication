@@ -5,7 +5,7 @@ import Button from "./../components/Button.jsx";
 
 function Login() {
   const [isDisabled, setIsDisabled] = useState(true);
-  const [formData, setFormData] = useState({
+  const [loginData, setloginData] = useState({
     email: "",
     password: "",
   });
@@ -13,20 +13,20 @@ function Login() {
   const onInputChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setloginData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleLogin = () => {
-    // localStorage.setItem("formData", JSON.stringify(formData));
+    // localStorage.setItem("loginData", JSON.stringify(loginData));
   };
 
   useEffect(() => {
-    if (!formData.email || !formData.password) {
+    if (!loginData.email || !loginData.password) {
       setIsDisabled(true);
     } else {
       setIsDisabled(false);
     }
-  }, [formData]);
+  }, [loginData]);
   return (
     <>
       <div className=" h-[680px]  w-96 mt-6 px-5 py-10 gap-3.5 flex flex-col mx-auto shadow-md border border-gray-200  rounded bg-white">
@@ -51,7 +51,7 @@ function Login() {
             placeholder={"Enter email address"}
             inputLegend={"Email Address"}
             isMandatory={false}
-            value={formData.email}
+            value={loginData.email}
             onchange={onInputChange}
           />
           <InputComp
@@ -61,7 +61,7 @@ function Login() {
             placeholder={"Enter password"}
             inputLegend={"Password"}
             isMandatory={false}
-            value={formData.password}
+            value={loginData.password}
             onchange={onInputChange}
           />
           <Button
