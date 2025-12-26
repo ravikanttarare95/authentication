@@ -28,11 +28,12 @@ function SignUp() {
       email: "",
       password: "",
       companyName: "",
+      checkAgency: "",
     });
     toast.success("Account Created Successfully");
     setTimeout(() => {
       navigate("/login");
-    }, 2000);
+    }, 1000);
   };
   useEffect(() => {
     if (
@@ -40,7 +41,7 @@ function SignUp() {
       !signUpData.number ||
       !signUpData.email ||
       !signUpData.password ||
-      !signUpData.companyName
+      !signUpData.checkAgency
     ) {
       setIsDisabled(true);
     } else {
@@ -114,6 +115,36 @@ function SignUp() {
             value={signUpData.companyName}
             onchange={onInputchange}
           />
+          <p>
+            Are you an Agency?<span className="text-rose-500 font-bold">*</span>
+          </p>
+
+          <div className="flex gap-2 -mt-2">
+            <input
+              type="radio"
+              id="yes"
+              name="checkAgency"
+              value="yes"
+              checked={signUpData.checkAgency === "yes"}
+              className="cursor-pointer"
+              onChange={onInputchange}
+            />
+            <label htmlFor="yes" className="cursor-pointer mr-2">
+              Yes
+            </label>
+            <input
+              type="radio"
+              id="no"
+              name="checkAgency"
+              value="no"
+              checked={signUpData.checkAgency === "no"}
+              className="cursor-pointer"
+              onChange={onInputchange}
+            />
+            <label htmlFor="no" className="cursor-pointer">
+              No
+            </label>
+          </div>
           <Button
             type={"submit"}
             btnTitle={"Create Account"}

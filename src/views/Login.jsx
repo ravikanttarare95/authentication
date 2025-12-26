@@ -25,14 +25,14 @@ function Login() {
       loginData.email !== signUpData.email ||
       loginData.password !== signUpData.password
     ) {
-      toast.error("Please enter valid credentials");
+      return toast.error("Please enter valid credentials");
     }
 
     toast.success("Login Successfull");
 
     setTimeout(() => {
       navigate("/profile");
-    }, 2000);
+    }, 1000);
   };
 
   useEffect(() => {
