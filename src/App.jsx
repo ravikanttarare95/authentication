@@ -1,4 +1,3 @@
-import React from "react";
 import Home from "./views/Home.jsx";
 import Login from "./views/Login.jsx";
 import SignUp from "./views/SignUp.jsx";

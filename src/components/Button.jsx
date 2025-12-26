@@ -4,6 +4,7 @@ function Button({
   onBtnClick,
   btnVariant,
   isDisabled,
+  customStyle,
   size = "md",
 }) {
   const variantClass =
@@ -15,15 +16,15 @@ function Button({
 
   const sizeClass =
     size === "sm"
-      ? "text-sm px-3 py-1 rounded-xs shadow-sm font-light"
-      : "text-base px-5 py-2.5 rounded-sm shadow-sm font-medium";
+      ? "text-sm px-3 py-1 rounded-sm font-light"
+      : "text-lg px-5 py-2.5 rounded-md font-medium";
 
   return (
     <button
       type={type}
       className={`${
         isDisabled ? "bg-gray-300! text-white! hover:bg-gray-300!" : ""
-      } ${sizeClass} ${variantClass} cursor-pointer transition-all duration-300`}
+      } ${sizeClass} ${variantClass} ${customStyle} cursor-pointer transition-all duration-300`}
       onClick={onBtnClick}
       disabled={isDisabled}
     >
